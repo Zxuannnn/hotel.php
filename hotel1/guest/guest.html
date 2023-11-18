@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>hotel.php</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link href="guest.css" rel="stylesheet">
+</head>
+<style>
+    .overlay2 {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    margin-left: 860px;
+    margin-top: 170px;
+    }
+    select {
+        width: 116px;
+    }
+    .colored-buttong {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffc451;
+    color: #151515;
+    padding: 5px 178px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.popup-container {
+  position: fixed;
+  bottom: -1000px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 427px;
+  background-color: #151515;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  transition: bottom 0.5s ease-in-out;
+}
+
+.popup-container.open {
+  bottom: 150px;
+}
+
+.popup-content {
+  text-align: center;
+}
+.hide-box {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    color: #151515;
+    padding: 5px 184px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.hide-box:hover {
+    background-color: #ddd;
+} 
+</style>
+<body>
+<div class="container1">
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"><a>HphP<span>.</span></a></h1>
+            <ul>
+                <li class="txthvr"><a style="color: #ffc451;" href="guest.html" class="hovered">Home Page</a></li>
+                <li class="txthvr"><a href="about.html" class="hovered">About</a></li>
+                <li><a href="">    
+                    <div class="dropdown">
+                        <a class="dropbtn">Rooms</a>
+                        <div class="dropdown-content">
+                            <a href="normal.html">Normal</a>
+                            <a href="couple.html">Couple</a>
+                            <a href="sultan.html">Sultan</a>
+                        </div>
+                    </div></a></li>
+                <li><a href="">
+                    <div class="dropdown">
+                        <a class="dropbtn">Contact Us</a>
+                        <div class="dropdown-content">
+                            <a href="https://wa.me/6288225027973">WhatsApp</a>
+                            <a href="https://www.instagram.com/kelazberapa_/?img_index=1">Instagram</a>
+                            <a href="mailto:gilangjati86@gmail.com">Email</a>
+                        </div>
+                    </div></a></li>
+                    <li class="txthvr"><a href="login-admin.php" class="hovered">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+        <div class="content">
+            <h1>Welcome<br>to hotel<span style="color: #ffc451;">.</span>php</h1>
+            <p>We look forward to welcoming you to provide an unforgettable experience at hotel<span style="color: #ffc451;">.</span>php. Order now to get our exclusive offers.</p>
+            <form>
+                <input type="text" placeholder="Country name">
+                <button type="submit" class="btn">Search</button>
+            </form>
+        </div>
+
+        <div class="overlay2" id="overlay2">
+            <div class="box">
+                <h3 style="color: #ffc451">Availability</h3><br>
+                    <table border="1" style="text-align: left;" style="border: 1px solid #151515;" class="inputan">
+                        <tr>
+                            <td style="color: #fff">Normal Room : Kamar 3-10 Tersedia</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff">Couple Room : Kamar 1-10 Tersedia</td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff">Sultan Room : Kamar 1-10 Tersedia</td>
+                        </tr>
+                    </table><br>
+                        <button class="btn btnking" onclick="openPopup()">Booking Now</button>
+            </div>
+        </div>
+        <div class="popup-container" id="popupContainer">
+            <div class="popup-content">
+              <h3 style="color: #ffc451;">RESERVASI</h3>
+                <form method="POST" action="input-aksi-tamu.php" style="text-align: left;" style="border: 1px solid #151515;" class="inputan">
+                    <table>
+                        <tr>
+                            <td style="color: #fff">ID Reservasi</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><input type="number" name="idrsr"></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff">Nama Tamu</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><input type="text" name="nmtmu"></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff;">Tipe Kamar</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><select name="tika" id="">
+                                <option value=""></option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                        <td style="color: #fff">Nomor Kamar</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><input type="number" name="noka"></td>
+                        </tr> 
+                        <tr>
+                            <td style="color: #fff">Check In</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><input type="date" name="cin" style="width: 60%;"></td>
+                        </tr>        
+                        <tr>
+                            <td style="color: #fff">Check Out</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><input type="date" name="cot" style="width: 60%;"></td>
+                        </tr>
+                        <tr>
+                            <td style="color: #fff">Total Harga</td>
+                            <td><label for="">ㅤㅤㅤㅤㅤㅤ</label><input type="text" name toha></td>
+                        </tr>
+                    </table>
+                        <div>
+                            <input type="submit" class="colored-buttong" value="Submit">
+                        </div>
+                    </form>
+                            <button class="hide-box" onclick="closePopup()">Close</button>
+            </div>
+        </div>
+</div>
+<script>
+      function openPopup() {
+    document.getElementById('popupContainer').classList.add('open');
+  }
+
+  function closePopup() {
+    document.getElementById('popupContainer').classList.remove('open');
+  }
+</script>
+</body>
+</html>

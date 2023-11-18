@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form dan Logo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #151515;
+      margin: 0;
+    }
+
+    #formPage {
+      text-align: center;
+    }
+
+    #logoPage {
+      display: none;
+      text-align: center;
+      color: #00fa36;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="formPage">
+  <h2 style="color: white;">Halaman Form</h2>
+  <!-- Tambahkan elemen formulir Anda di sini -->
+  <button onclick="showLogo()" type="submit">Booking</button>
+</div>
+
+<div id="logoPage">
+  <h2>Booking Succes!</h2>
+  <!-- Tambahkan elemen logo atau konten Anda di sini -->
+</div>
+
+<script>
+  function showLogo() {
+    // Sembunyikan tombol Selesai pada halaman form
+    document.getElementById('formPage').style.display = 'none';
+
+    // Tampilkan halaman logo
+    document.getElementById('logoPage').style.display = 'block';
+
+    // Setelah 3 detik, kembali ke halaman awal
+    setTimeout(function() {
+      // Sembunyikan halaman logo
+      document.getElementById('logoPage').style.display = 'none';
+
+      // Tampilkan kembali halaman form
+      document.getElementById('formPage').style.display = 'block';
+    }, 3000);
+  }
+</script>
+
+</body>
+</html>

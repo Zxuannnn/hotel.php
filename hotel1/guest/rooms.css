@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}   
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", sans-serif;
+}
+.container1 {
+    width: 100%;
+    min-height: 100vh;
+    background: url("https://images.unsplash.com/photo-1517840901100-8179e982acb7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdGVsc3xlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80");
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+}
+.containerAbout {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #151515;
+    background-position: center;
+    padding: 10px 8%;
+}
+.imgAbout {
+    width: 530px;
+    margin-top: 5%;
+    float: right;
+    margin-left: 620px;
+    position: absolute;
+}
+.logo{
+    width: 180px;
+    cursor: pointer;
+    font-size: 30px;
+    color: #fff;
+}
+.logo a span {
+    color: #ffc451;
+}
+nav{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+nav ul{
+    list-style: none;
+    width: 100%;
+    text-align: right;
+    padding-right: 60px;
+}
+nav ul li{
+    display: inline-block;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    border-radius: 5px;
+    background: #151515;
+    color: #ffc451;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btnking{
+    color: #fff;
+    border-radius: 4px;
+    padding: 7px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+    border: 2px solid #ffc451;
+    cursor: pointer;
+}
+.btnking:hover{
+    background: #ffbb38;
+    color: #343a40;
+}
+.flex{
+    display: flex;
+}
+.content{
+    margin-top: 14%;
+    color: #fff;
+    max-width: 620px;
+}
+.contentAbout{
+    margin-top: 6%;
+    color: #fff;
+    max-width: 580px;
+    padding: 0 20px;
+    float: left;
+}
+.content h1{
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 85px;
+    margin-bottom: 25px;
+}
+.content form{
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+}
+.content form input{
+    border: 0;
+    outline: 0;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 10px;
+}
+.content form .btn{
+    font-size: 15px;
+    padding: 10px 30px;
+}
+/* Style dasar dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+/* Tombol dropdown */
+.dropbtn {
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* Isi dropdown */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+}
+/* Tautan dalam dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+/* Warna tautan saat dihover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+/* Tampilkan dropdown saat tombol dihover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Mengatur ulang tampilan dropdown saat tidak dihover */
+.dropdown:hover .dropbtn {
+    color: #ffc451;
+}
+.txthvr:hover .hovered {
+    color: #ffc451;
+}
+.get-started-btn {
+    color: #fff;
+    border-radius: 4px;
+    padding: 7px 25px 8px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+    border: 2px solid #ffc451;
+}
+.get-started-btn:hover {
+    background: #ffbb38;
+    color: #343a40;
+}
+.inputan table tr {
+    color: #151515;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.isi table tr td {
+    border: 1px solid #ffc451;
+    padding: 8px;
+}
+
+.inputan th,
+td {
+    border: 1px solid #151515;
+    padding: 8px;
+}
+.overlay1 {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+.box {
+    background-color: #151515;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+#hide-box {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fff;
+    color: #151515;
+    padding: 9px 60px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#hide-box:hover {
+    background-color: #ddd;
+}        
+.colored-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffc451;
+    color: #151515;
+    padding: 9px 70px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.colored-button1 {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #ffc451;
+    color: #151515;
+    padding: 9px 120px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.colored-button:hover {
+    background-color: #ffcd6d;
+}

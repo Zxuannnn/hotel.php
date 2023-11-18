@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    #startDatePicker, #endDatePicker, #roomSelect {
+      margin-right: 10px;
+    }
+
+    #priceOutput {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<label for="startDatePicker">Tanggal Awal:</label>
+<input type="date" id="startDatePicker">
+
+<label for="endDatePicker">Tanggal Akhir:</label>
+<input type="date" id="endDatePicker">
+
+<label for="roomSelect">Pilih Kamar:</label>
+<select id="roomSelect" onchange="calculatePrice()">
+  <option value="standard">Standard Room ($100/hari)</option>
+  <option value="deluxe">Deluxe Room ($150/hari)</option>
+  <option value="suite">Suite Room ($200/hari)</option>
+</select>
+
+<div id="priceOutput">Harga: </div>
+
+<script>
+  // Ambil elemen input tanggal awal, tanggal akhir, dan select kamar
+  var startDatePicker = document.getElementById('startDatePicker');
+  var endDatePicker = document.getElementById('endDatePicker');
+  var roomSelect = document.getElementById('roomSelect');
+
+  // Tambahkan peristiwa input dan change ke elemen
+  startDatePicker.addEventListener('input', calculatePrice);
+  endDatePicker.addEventListener('input', calculatePrice);
+  roomSelect.addEventListener('change', calculatePrice);
+
+  function calculatePrice() {
+    // Ambil nilai tanggal dari input
+    var startDate = new Date(startDatePicker.value);
+    var endDate = new Date(endDatePicker.value);
+
+    // Pastikan tanggal akhir tidak sebelum tanggal awal
+    if (endDate < startDate) {
+      alert('Tanggal akhir harus setelah tanggal awal.');
+      return;
+    }
+
+    // Set harga per hari kamar sesuai dengan pilihan
+    var hargaPerHari = {
+      'standard': 100,
+      'deluxe': 150,
+      'suite': 200
+    };
+
+    // Ambil nilai pilihan kamar
+    var selectedRoom = roomSelect.value;
+
+    // Hitung jumlah hari antara tanggal awal dan tanggal akhir
+    var jumlahHari = Math.ceil((endDate - startDate) / (24 * 60 * 60 * 1000));
+
+    // Pastikan jumlah hari tidak negatif
+    jumlahHari = Math.max(jumlahHari, 0);
+
+    // Hitung total harga berdasarkan pilihan kamar
+    var totalHarga = jumlahHari * hargaPerHari[selectedRoom];
+
+    // Tampilkan total harga
+    var priceOutput = document.getElementById('priceOutput');
+    priceOutput.textContent = 'Harga: $' + totalHarga;
+  }
+</script>
+
+</body>
+</html>
